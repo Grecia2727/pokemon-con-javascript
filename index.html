@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
+    <link rel="icon" href="assets/images/pokeball.png">
+    <title>Pokedex</title>
+  </head>  
+  <body>
+    <!-- Home -->
+    <div class="container">
+     
+      <div class="row">
+        <div class="col-xs-2 col-lg-2" onclick="getData()">
+          <i class="far fa-arrow-alt-circle-left fa-3x" id="return"></i>
+        </div>
+        <div class="col-xs-8 col-lg-6 col-lg-offset-1" id="title" onclick="getData()">
+          <img class="img-responsive activator" src="assets/images/pokemon_title.png" alt="pokemon">
+        </div>
+      </div>
+
+      <div class=" row">
+        <div class="col-lg-4 col-xs-10 col-lg-offset-4 col-xs-offset-1">
+          <div class="input-group">
+            <input type="text" id="searcher" class="form-control" placeholder="Search pokemons (A, B ...)">
+            <span class="input-group-btn">
+              <button class="btn btn-default" id="search-btn" type="button">  Go!  </button>
+            </span>
+          </div>
+        </div>    
+      </div>
+      <div class="row" id="pokemon-container"></div>
+    </div>
+
+    <!-- Pokemon Modal -->
+    <div class="modal fade pokemonModal " tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="big-dot"></div>
+            <div class="red-dot dot"></div>
+            <span class="yellow-dot dot"></span>
+            <span class="green-dot dot"></span>
+            <button type="button" class="close" id="close-modal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+
+            <div class="row">
+
+              <div class="col-lg-6 col-xs-6">
+
+                <div class="row white">
+                  <!-- Image-->
+                  <div class="col-xs-12">
+                    <p><strong id="name" class="white"></strong></p>
+                    <div id="image"></div>
+                  </div>
+                  <!-- About -->
+                  <div class="col-xs-12">  
+                    <div><p><strong>ABOUT:</strong></p><p id="description"></p></div>
+                  </div>
+                </div>
+      
+              </div>
+
+              <!-- Bullets -->
+              <div class="col-xs-5" id="data-bullets">
+
+                <div class="row">
+                  <!-- First section of bullets -->
+                  <div class="col-xs-12" id="title-bullets">
+                      <p class="text-center">
+                          <i class="fas fa-sync-alt fa-2x text-center front" id="rotate-img"></i>
+                      </p>
+                  </div>
+                  <div class="col-xs-12 col-lg-6">
+                    <p>Height: <span id="height"></span></p> 
+                    <p>Weight: <span id="weight"></span></p> 
+                    <p>Habitat: <span id="habitat"></span></p>
+                    <p>Type: </p>
+                      <ul id="type"></ul>
+                    <p>Abilities: </p>
+                      <ul id="ability"></ul>
+                  </div>
+
+                  <!-- Second Section of Bullets -->
+                  <div class="col-xs-12 col-lg-6">
+                    <p>Speed: <span id="speed"></span></p>
+                    <p>HP: <span id="hp"></span></p>
+                    <p>Attack: <span id="attack"></span></p>
+                    <p>Defense: <span id="defense"></span></p>
+                    <p>Capture Rate: <span id="cap-rate"></span></p>
+                  </div>
+                </div>  
+
+            </div>
+          </div>   
+        </div>
+      </div>
+    </div>
+    <!-- FontAwesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<!-- JS -->
+    <script src="./js/app.js"></script>
+    
+  </body>
+</html>
